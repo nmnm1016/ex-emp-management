@@ -7,7 +7,7 @@ package com.example.domain;
  * @author n.shunsuke
  * 
  * 
- * */
+ */
 
 
 

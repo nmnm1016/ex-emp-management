@@ -14,4 +14,5 @@ public class AdministratorService {
 	@Autowired
 	private Administrator administrator;
 
+	
 }
