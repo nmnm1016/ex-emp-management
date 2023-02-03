@@ -41,8 +41,7 @@ public class AdministratorRepository {
 		SqlParameterSource param = new BeanPropertySqlParameterSource(administrator);
 
 		String insertSql
-
-				= "INSERT INTO employees(name,age,mail_address,password) VALUES(administrator)";
+				= "INSERT INTO administrators(name,mail_address,password) VALUES(:name,:mailAddress,:password)";
 
 		template.update(insertSql, param);
 	}

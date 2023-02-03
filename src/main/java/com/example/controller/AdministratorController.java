@@ -11,10 +11,9 @@ import com.example.domain.Administrator;
 import com.example.form.InsertAdministratorForm;
 import com.example.service.AdministratorService;
 
-
-
 /**
  * 管理者登録関連コントローラー.
+ * 
  * @author n.shunsuke
  *
  */
@@ -24,12 +23,12 @@ public class AdministratorController {
 
 	@Autowired
 	private AdministratorService administratorService;
-	
+
 	@GetMapping("/toInsert")
 	public String toInsert(InsertAdministratorForm form) {
 		return "administrator/insert";
 	}
-	
+
 	@PostMapping("/insert")
 	public String insert(InsertAdministratorForm form) {
 		Administrator administrator = new Administrator();
