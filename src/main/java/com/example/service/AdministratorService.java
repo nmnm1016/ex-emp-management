@@ -17,7 +17,7 @@ public class AdministratorService {
 	
 	/** 管理者情報を挿入する*/
 	public void insert(Administrator administrator) {
-		administratorRepository.insert();
+		administratorRepository.insert(administrator);
 	}
 
 	
