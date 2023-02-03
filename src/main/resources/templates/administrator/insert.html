@@ -42,7 +42,7 @@
 
             <!-- ここにモックのform要素を貼り付けます -->
 
-            <form method="post" action="login.html" ht:action="@{/insert}" th:object="${insertAdministrationForm}">
+            <form method="post" action="login.html" th:action="@{/insert}" th:object="${insertAdministratorForm}">
               <fieldset>
                 <legend>
                   管理者登録<br />(システムにログインできる管理者を登録します)
@@ -80,7 +80,7 @@
                         id="mailAddress"
                         class="form-control"
                         placeholder="yamada@mail.com"
-                        th:field="${mailAddress}"
+                        th:field="*{mailAddress}"
                       />
                     </div>
                   </div>
@@ -99,7 +99,7 @@
                         id="password"
                         class="form-control"
                         placeholder="password"
-                        th:field="${password}"
+                        th:field="*{password}"
                       />
                     </div>
                   </div>
