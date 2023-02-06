@@ -37,4 +37,14 @@ public class EmployeeService {
 		return employee;
 	}
 
+	
+	/**
+	 * 従業員情報を検索する　　　　　
+	 * 
+	 * @param employee 更新する従業員情報
+	 */
+	public void update(Employee employee) {
+		employeeRepository.update(employee);
+	}
+
 }
