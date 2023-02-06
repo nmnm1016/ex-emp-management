@@ -1,13 +1,10 @@
 package com.example.domain;
 
 /**
- * 従業員情報を表すドメイン
- * 
+ * 従業員情報を表すドメイン.
  * @author n.shunsuke
  * 
- * 
  */
-
 import java.util.Date;
 
 public class Employee {

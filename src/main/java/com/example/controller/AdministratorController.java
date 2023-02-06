@@ -14,28 +14,32 @@ import com.example.service.AdministratorService;
 
 /**
  * 管理者登録関連コントローラー.
- * 
  * @author n.shunsuke
- *
  */
 @Controller
 @RequestMapping("/")
 public class AdministratorController {
 
 	
+
 	@GetMapping("/")
 	public String toLogin(LoginForm form) {
 		return "administrator/login";
 	}
-	
 	@Autowired
 	private AdministratorService administratorService;
 
+	/**
+	 * 管理者情報登録画面に遷移する.
+	 * @param form フォーム
+	 * @return 管理者情報登録画面
+	 */
+	
 	@GetMapping("/toInsert")
 	public String toInsert(InsertAdministratorForm form) {
 		return "administrator/insert";
 	}
-
+	
 	@PostMapping("/insert")
 	public String insert(InsertAdministratorForm form) {
 		Administrator administrator = new Administrator();

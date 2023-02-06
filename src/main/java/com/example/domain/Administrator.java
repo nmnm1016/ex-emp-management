@@ -1,14 +1,12 @@
 package com.example.domain;
 
 /**
- *  管理者情報を表すドメイン
- *  
- *  @author n.shunsuke
- *  
+ * 管理者情報を表すドメイン.
+ * @author n.shunsuke
+ * 
  */
-
 public class Administrator {
-	
+
 	/** ID */
 	private Integer id;
 	/** 名前 */
@@ -18,8 +16,9 @@ public class Administrator {
 	/** パスワード */
 	private String password;
 
-	public Administrator() {}
-	
+	public Administrator() {
+	}
+
 	public Administrator(Integer id, String name, String mailAddress, String password) {
 		super();
 		this.id = id;
@@ -65,16 +64,5 @@ public class Administrator {
 		return "Administrator [id=" + id + ", name=" + name + ", mailAddress=" + mailAddress + ", password=" + password
 				+ "]";
 	}
-	
-
-
-	
-
-
-
-
-
-
 
 }
-

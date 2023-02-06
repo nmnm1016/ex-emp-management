@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
 import com.example.domain.Employee;
 
 @Repository
-
 public class EmployeeRepository {
 
 	public static final RowMapper<Employee> EMPLOYEE_ROW_MAPPER = (rs, i) -> {
