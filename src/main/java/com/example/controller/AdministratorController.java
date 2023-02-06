@@ -70,7 +70,7 @@ public class AdministratorController {
 		Administrator adminInfo = administratorService.login(mailAddress, password);
 
 		if (adminInfo == null) {
-		//String falseMessage = "メールアドレスまたはパワスワードが不正です";
+			// String falseMessage = "メールアドレスまたはパワスワードが不正です";
 			model.addAttribute("falseMessage", "メールアドレスまたはパワスワードが不正です");
 			return "administrator/login";
 		} else {
