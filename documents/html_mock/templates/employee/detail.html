@@ -123,43 +123,44 @@
                   <tr>
                     <th nowrap>メールアドレス</th>
                     <td>
-                      <span>yamada@sample.com</span>
+                      <span  th:text="${session.employee.mailAddress}"></span>
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>郵便番号</th>
                     <td>
-                      <span>111-1111</span>
+                      <span  th:text="${session.employee.zipCode}"></span>
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>住所</th>
                     <td>
-                      <span>東京都新宿区1-1-1</span>
+                      <span  th:text="${session.employee.address}"></span>
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>電話番号</th>
                     <td>
-                      <span>090-0000-0000</span>
+                      <span  th:text="${session.employee.telephone}"></span>
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>給料</th>
                     <td>
-                      <span>400000円</span>
+                      <span th:text="${session.employee.salary}"></span>
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>特性</th>
                     <td>
                       <span
-                        >明るく素直な性格です。リーダーシップを発揮します。新卒社員研修の時はグループ開発の時にリーダーを買ってでました。積極性も人間性も抜群です。周りに対する不満も聞いたことがありません。</span
+                         th:text="${session.employee.characteristics}"></span
                       >
                     </td>
                   </tr>
                   <tr>
                     <th nowrap>扶養人数</th>
+                    
                     <td>
                       <label class="error-messages">
                         扶養人数を入力してください
@@ -169,14 +170,16 @@
                         style="color: red"
                         for="dependentsCount"
                       ></label>
-                      <input type="hidden" name="id" />
+                      <input type="hidden" name="id"  value="${session.employee.id}"/>
                       <input
                         type="text"
                         name="dependentsCount"
                         id="dependentsCount"
                         class="form-control"
-                        value="3"
-                      />
+                        value="${session.employee.dependentsCount}"
+                      >
+                      <span th:text="${session.employee.dependentsCount}"></span>
+                      </input>
                     </td>
                   </tr>
                 </table>
