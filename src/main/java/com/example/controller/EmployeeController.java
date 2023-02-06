@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.domain.Employee;
 import com.example.service.EmployeeService;
 
+/**
+ * 従業員用コントローラー
+ * 
+ * @author n.shunsuke
+ *
+ */
 @Controller
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -18,6 +24,12 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
+	/**
+	 * 従業員一覧を表示するメソッド
+	 *
+	 * @param model モデル
+	 * @return 従業員一覧画面
+	 */
 	@GetMapping("/showList")
 	public String showList(Model model) {
 		List<Employee> employeeList = employeeService.showList();
