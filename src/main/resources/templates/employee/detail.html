@@ -68,49 +68,59 @@
 
 					<!-- ここにモックのform要素を貼り付けます -->
 
-					<form method="post" action="list.html">
+					<form method="post" action="list.html"
+						th:action="@{employee/update}" th:object="${updateEmployeeForm}">
 						<fieldset>
 							<legend>従業員情報</legend>
 							<table class="table table-striped">
 								<tr>
 									<th nowrap>従業員名</th>
-									<td><span th:text="${employee.name}"></span></td>
+									<td><span th:field="*{name}" th:text="${employee.name}"></span></td>
 								</tr>
 								<tr>
 									<th nowrap>写真</th>
-									<td><img th:src="@{/img/} + ${employee.image}" /></td>
+									<td><img th:field="*{image}"
+										th:src="@{/img/} + ${employee.image}" /></td>
 								</tr>
 								<tr>
 									<th nowrap>性別</th>
-									<td><span th:text="${employee.gender}"></span></td>
+									<td><span th:field="*{gender}"
+										th:text="${employee.gender}"></span></td>
 								</tr>
 								<tr>
 									<th nowrap>入社日</th>
-									<td><span th:text="${employee.hireDate}"></span></td>
+									<td><span th:field="*{hireDate}"
+										th:text="${employee.hireDate}"></span></td>
 								</tr>
 								<tr>
 									<th nowrap>メールアドレス</th>
-									<td><span th:text="${employee.mailAddress}"></span></td>
+									<td><span th:field="*{mailAddress}"
+										th:text="${employee.mailAddress}"></span></td>
 								</tr>
 								<tr>
 									<th nowrap>郵便番号</th>
-									<td><span th:text="${employee.zipCode}"></span></td>
+									<td><span th:field="*{zipCode}"
+										th:text="${employee.zipCode}"></span></td>
 								</tr>
 								<tr>
 									<th nowrap>住所</th>
-									<td><span th:text="${employee.address}"></span></td>
+									<td><span th:field="*{address}"
+										th:text="${employee.address}"></span></td>
 								</tr>
 								<tr>
 									<th nowrap>電話番号</th>
-									<td><span th:text="${employee.telephone}"></span></td>
+									<td><span th:field="*{telephone}"
+										th:text="${employee.telephone}"></span></td>
 								</tr>
 								<tr>
 									<th nowrap>給料</th>
-									<td><span th:text="${employee.salary}"></span></td>
+									<td><span th:field="*{salary}"
+										th:text="${employee.salary}"></span></td>
 								</tr>
 								<tr>
 									<th nowrap>特性</th>
-									<td><span th:text="${employee.characteristics}"></span></td>
+									<td><span th:field="*{characteristics}"
+										th:text="${employee.characteristics}"></span></td>
 								</tr>
 								<tr>
 									<th nowrap>扶養人数</th>
@@ -120,7 +130,8 @@
 										for="dependentsCount"></label> <input type="hidden" name="id"
 										th:value="${employee.id}" /> <input type="text"
 										name="dependentsCount" id="dependentsCount"
-										class="form-control" th:value="${employee.dependentsCount}" />
+										class="form-control" th:value="${employee.dependentsCount}"
+										th:field="*{dependestsCount}" />
 
 
 									</td>
