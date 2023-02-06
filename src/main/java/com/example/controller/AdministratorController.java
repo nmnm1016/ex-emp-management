@@ -81,7 +81,7 @@ public class AdministratorController {
 			return "administrator/login";
 		}
 
-		session.setAttribute("employeeName", adminInfo.getName());
+		session.setAttribute("adminName", adminInfo.getName());
 		return "redirect:employee/showList";
 
 	}
@@ -95,6 +95,6 @@ public class AdministratorController {
 	@GetMapping("/logout")
 	public String logout(LoginForm form) {
 		session.invalidate();
-		return "/";
+		return "administrator/login";
 	}
 }
