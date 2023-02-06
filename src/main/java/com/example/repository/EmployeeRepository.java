@@ -40,10 +40,10 @@ public class EmployeeRepository {
 	private NamedParameterJdbcTemplate template;
 
 	/**
-	 * 従業員情報を降順に表示.
-	 *
+	 * 従業員情報を降順に表示
+	 * 
+	 * @return 従業員リスト
 	 */
-
 	public List<Employee> findAll() {
 
 		String sql = "SELECT id, name, image, gender, hire_date, mail_address, zip_code, "
@@ -73,10 +73,10 @@ public class EmployeeRepository {
 	}
 
 	/**
-	 * 従業員情報を変更する.
+	 * 従業員の更新
 	 * 
+	 * @param employee 更新後の従業員情報
 	 */
-
 	public void update(Employee employee) {
 		SqlParameterSource param = new BeanPropertySqlParameterSource(employee);
 		String updateSql = "UPDATE employees  SET name=:name, image=:image, gender=:gender hire_date=:hireDate mail_address=:mailAddress "
