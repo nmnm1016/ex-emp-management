@@ -7,6 +7,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.domain.Administrator;
 import com.example.repository.AdministratorRepository;
 
+/**
+ * 管理者情報操作用サービス.
+ * 
+ * @author n.shunsuke
+ *
+ */
 @Service
 @Transactional
 
@@ -15,7 +21,7 @@ public class AdministratorService {
 	private AdministratorRepository administratorRepository;
 
 	/**
-	 * 管理者情報を挿入する。
+	 * 管理者情報を挿入する.
 	 * 
 	 * @param administrator 管理者情報
 	 */
@@ -24,7 +30,7 @@ public class AdministratorService {
 	}
 
 	/**
-	 * ログイン処理をする。
+	 * ログイン処理をする.
 	 * 
 	 * @param mailAddress メールアドレス
 	 * @param password    パスワード

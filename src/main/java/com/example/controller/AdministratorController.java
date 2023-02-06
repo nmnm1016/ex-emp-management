@@ -47,6 +47,12 @@ public class AdministratorController {
 		return "administrator/insert";
 	}
 
+	/**
+	 * 管理者情報を追加する.
+	 * 
+	 * @param form フォーム
+	 * @return ログイン画面
+	 */
 	@PostMapping("/insert")
 	public String insert(InsertAdministratorForm form) {
 		Administrator administrator = new Administrator();
@@ -56,11 +62,11 @@ public class AdministratorController {
 	}
 
 	/**
-	 * ログイン情報を受け取り、正なら従業員一覧ページ、不正ならログインページに遷移
+	 * ログインする.
 	 * 
 	 * @param form  フォーム
 	 * @param model モデル
-	 * @return ログイン画面
+	 * @return 正なら従業員一覧ページ、不正ならログインページに遷移
 	 */
 	@PostMapping("/login")
 	public String login(LoginForm form, Model model) {
@@ -73,10 +79,22 @@ public class AdministratorController {
 			// String falseMessage = "メールアドレスまたはパワスワードが不正です";
 			model.addAttribute("falseMessage", "メールアドレスまたはパワスワードが不正です");
 			return "administrator/login";
-		} else {
-			session.setAttribute("employeeName", adminInfo.getName());
-			return "redirect:employee/showList";
 		}
 
+		session.setAttribute("employeeName", adminInfo.getName());
+		return "redirect:employee/showList";
+
+	}
+
+	/**
+	 * ログアウト処理.
+	 * 
+	 * @param form ログイン情報
+	 * @return ログイン画面
+	 */
+	@GetMapping("/logout")
+	public String logout(LoginForm form) {
+		session.invalidate();
+		return "/";
 	}
 }

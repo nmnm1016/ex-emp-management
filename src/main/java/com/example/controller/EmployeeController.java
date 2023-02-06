@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.domain.Employee;
+import com.example.form.LoginForm;
 import com.example.form.UpdateEmployeeForm;
 import com.example.service.EmployeeService;
 
 /**
- * 従業員用コントローラー
+ * 従業員用コントローラー.
  * 
  * @author n.shunsuke
  *
@@ -26,8 +27,10 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
+	
+
 	/**
-	 * 従業員一覧を表示するメソッド
+	 * 従業員一覧を表示するメソッド.
 	 *
 	 * @param model モデル
 	 * @return 従業員一覧画面
@@ -39,19 +42,27 @@ public class EmployeeController {
 		return "employee/list";
 	}
 
+	/**
+	 * 従業員詳細ページに遷移.
+	 * 
+	 * @param id    従業員ID
+	 * @param model モデル
+	 * @param form  フォーム
+	 * @return 従業員詳細画面
+	 */
 	@GetMapping("/showDetail")
 	public String showDetail(String id, Model model, UpdateEmployeeForm form) {
 		Employee employee = employeeService.showDetail(Integer.parseInt(id));
 		model.addAttribute("employee", employee);
 		return "employee/detail";
 	}
-	
+
 	/**
-	 *従業員IDを受け取り、対象の扶養人数を更新
+	 * 従業員IDを受け取り、対象の扶養人数を更新.
 	 * 
-	 * @param id 
+	 * @param id
 	 * @param dependentsCounts 扶養人数
-	 * @return　従業員一覧
+	 * @return 従業員一覧
 	 */
 	@PostMapping("/update")
 	public String update(String id, String dependentsCount) {
@@ -61,4 +72,6 @@ public class EmployeeController {
 		return "redirect:/employee/showList";
 	}
 	
+
+
 }

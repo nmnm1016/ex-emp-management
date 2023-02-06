@@ -1,7 +1,7 @@
 package com.example.form;
 
 /**
- * 管理者登録時に利用するフォーム
+ * 管理者登録時に利用するフォーム.
  * 
  * @author n.shunsuke
  *

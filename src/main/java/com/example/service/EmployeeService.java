@@ -9,6 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.domain.Employee;
 import com.example.repository.EmployeeRepository;
 
+/**
+ * 従業員情報操作用サービス.s
+ * 
+ * @author n.shunsuke
+ *
+ */
 @Service
 @Transactional
 public class EmployeeService {
@@ -17,7 +23,7 @@ public class EmployeeService {
 	private EmployeeRepository employeeRepository;
 
 	/**
-	 * 従業員リストの取得
+	 * 従業員リストの取得.
 	 * 
 	 * @return 検索した従業員一覧
 	 */
@@ -27,7 +33,7 @@ public class EmployeeService {
 	}
 
 	/**
-	 * 詳細表示する従業員情報検索
+	 * 詳細表示する従業員情報検索.
 	 * 
 	 * @param id 従業員ID
 	 * @return 従業員情報
@@ -39,7 +45,7 @@ public class EmployeeService {
 
 	
 	/**
-	 * 従業員情報を検索する　　　　　
+	 * 従業員情報を検索する.
 	 * 
 	 * @param employee 更新する従業員情報
 	 */

@@ -1,10 +1,15 @@
 package com.example.form;
 
+/**
+ * 扶養人数更新用フォーム.
+ * @author n.shunsuke
+ *
+ */
 public class UpdateEmployeeForm {
 
-	/* 従業員ID */
+	/**従業員ID */
 	private String id;
-	/* 扶養人数 */
+	/** 扶養人数 */
 	private String dependentsCount;
 
 	public String getId() {
